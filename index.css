@@ -1,0 +1,66 @@
+body{
+    background-color: rgba(244, 246, 250, 0.993);
+}
+#header-filters {
+    background: rgb(255, 255, 255);
+    color: #050505;
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+.itemHeader{
+    background: #fdfdfd;
+    width: max-content;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 10px;
+    border: 1px solid rgb(168, 167, 167);
+}
+.galka{
+    margin-bottom: -3px;
+}
+.content-wrapper{
+    display: flex;
+}
+.side-bar{
+    background: rgb(255, 255, 255);
+    color: #050505;
+    padding: 16px;
+    position: sticky;
+    height: 100vh;
+    min-width: 150px;
+    top: 70px;
+    margin-right: 0px;
+}
+.item-side-bar{
+    background: #fdfdfd;
+    width: max-content;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 10px;
+    font-weight: 800;
+}
+@media (max-width: 700px) {
+    .side-bar{
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+    .divDad{
+
+    }
+}
+@media (max-width: 700px) {
+    .divChild{
+
+    }
+}
+@media (max-width: 700px) {
+    .imgSneakers{
+
+    }
+}
