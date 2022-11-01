@@ -131,7 +131,7 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     const divChild = document.createElement('div')
     const imgSneakers = document.createElement('img')
     const imgHeart = document.createElement('img')
-    // const imgRedHeart = document.createElement('img')
+    const imgRedHeart = document.createElement('img')
     const pPrice = document.createElement('p')
     const pName = document.createElement('p')
     const pType = document.createElement('p')
@@ -155,14 +155,12 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     divChild.className = 'divChild'
     divChild.append(imgSneakers)
     divChild.append(imgHeart)
-    // divChild.append(imgRedHeart)
     divChild.append(pPrice)
     divChild.append(pName)
     divChild.append(pType)
 
     imgSneakers.className = 'imgSneakers'
     imgSneakers.src = sneaker.image
-    // imgSneakers.style.width = '200px'
 
     imgHeart.src = 'icon-heart.svg'
     imgHeart.style.position = 'absolute'
@@ -170,7 +168,8 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     imgHeart.style.right = '10px'
     imgHeart.className = 'imgHeart'
 
-    // imgRedHeart.src = 'red-heart.svg'
+    imgRedHeart.src = 'red-heart.svg'
+    imgRedHeart.className = 'imgRedHeart'
 
     pPrice.append(sneaker.price)
     pPrice.style.fontFamily = 'impact, fantasy'
@@ -189,16 +188,18 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     pType.style.marginLeft = '10px'
 
 
-    // divChild.addEventListener('mouseover', function (event){
-    //     const target = event.target.closest(['img']);
-    //     if(!target) return;
-    //     target.src = 'red-heart.svg'
-    // })
-    // divChild.addEventListener('mouseout', function (event){
-    //     const target = event.target.closest('img');
-    //     if(!target) return;
-    //     target.src = 'icon-heart.svg'
-    // })
+    divChild.addEventListener('click', function (event){
+        const target = event.target.closest('.imgHeart');
+        if(!target) return;
+        target.src = 'red-heart.svg'
+        target.className = '.imgRedHeart'
+    })
+    divChild.addEventListener('click', function (event){
+        const target = event.target.closest('.imgRedHeart');
+        if(!target) return;
+        target.src = 'icon-heart.svg'
+        target.className = '.imgHeart'
+    })
 })
 
 
