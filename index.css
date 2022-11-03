@@ -72,8 +72,14 @@ body{
     }
 }
 @media (max-width: 1080px) {
+    #container{
+        width: 100%;
+    }
+}
+@media (max-width: 1080px) {
     .divDad{
-        
+        width: 100%;
+    
     }
 }
 @media (max-width: 700px) {

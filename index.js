@@ -149,6 +149,7 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     divDad.style.maxWidth ='900px'
     divDad.style.minWidth ='300px'
     divDad.style.flexWrap = 'wrap'
+    divDad.style.className = 'divDad'
 
     divChild.style.margin = '10px'
     divChild.style.position = 'relative'
@@ -187,18 +188,16 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     pType.style.fontFamily = 'DejaVu Sans Mono, monospace'
     pType.style.marginLeft = '10px'
 
+    let heart = 0
 
     divChild.addEventListener('click', function (event){
+        // console.log(heart % 2 == 1) // we can see how it's work in consol
+        let svgArrey = ['red-heart.svg', 'icon-heart.svg']
+
         const target = event.target.closest('.imgHeart');
         if(!target) return;
-        target.src = 'red-heart.svg'
-        target.className = '.imgRedHeart'
-    })
-    divChild.addEventListener('click', function (event){
-        const target = event.target.closest('.imgRedHeart');
-        if(!target) return;
-        target.src = 'icon-heart.svg'
-        target.className = '.imgHeart'
+        target.src = heart % 2 == 1 ? svgArrey[1] : svgArrey[0]
+        heart = heart + 1
     })
 })
 
