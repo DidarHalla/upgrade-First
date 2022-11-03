@@ -196,7 +196,7 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 
         const target = event.target.closest('.imgHeart');
         if(!target) return;
-        target.src = heart % 2 == 1 ? svgArrey[1] : svgArrey[0]
+        target.src = heart % 2 == 1 ? svgArrey[0] : svgArrey[1]
         heart = heart + 1
     })
 })
