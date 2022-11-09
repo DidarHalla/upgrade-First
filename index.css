@@ -65,33 +65,21 @@ body{
         margin: 10px;
         border: 1px solid rgb(168, 167, 167);
     }
-}
-@media (max-width: 1080px) {
     .side-bar{
         display: none;
     }
-}
-@media (max-width: 1080px) {
     #container{
         width: 100%;
     }
-}
-@media (max-width: 1080px) {
     .divDad{
         width: 100%;
     }
-}
-@media (max-width: 1080px) {
     .divChild{
 
     }
-}
-@media (max-width: 1080px) {
     .imgSneakers{
         width: 430px;
     }
-}
-@media (max-width: 1080px) {
     .imgHeart{
         width: 50px;
         margin: 5px;

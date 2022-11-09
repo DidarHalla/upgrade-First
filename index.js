@@ -17,13 +17,11 @@ price.forEach((v, i) => {
 
 let massAllSneakersInfo =  Object.values(globalKart)
 
-console.log(massAllSneakersInfo);
-// console.log(Object.keys(massAllSneakersInfo));
 
 let newMass = massAllSneakersInfo.forEach((sneaker) => {
     const divContainer = document.getElementById('container')
-    const divDad = document.getElementById('divDad')
-    const divChild = document.createElement('div')
+    const sneakersDad = document.getElementById('sneakersDad')
+    const sneakersChild = document.createElement('div')
     const imgSneakers = document.createElement('img')
     const imgHeart = document.createElement('img')
     const imgRedHeart = document.createElement('img')
@@ -35,22 +33,22 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     divContainer.style.justifyContent = 'center'
     divContainer.style.marginTop = '70px'
 
-    divDad.append(divChild)
-    divDad.style.display = 'flex'
-    divDad.style.justifyContent = 'center'
-    divDad.style.maxWidth ='900px'
-    divDad.style.minWidth ='300px'
-    divDad.style.flexWrap = 'wrap'
-    divDad.style.className = 'divDad'
+    sneakersDad.append(sneakersChild)
+    sneakersDad.style.display = 'flex'
+    sneakersDad.style.justifyContent = 'center'
+    sneakersDad.style.maxWidth ='900px'
+    sneakersDad.style.minWidth ='300px'
+    sneakersDad.style.flexWrap = 'wrap'
+    sneakersDad.style.className = 'sneakersDad'
 
-    divChild.style.margin = '10px'
-    divChild.style.position = 'relative'
-    divChild.className = 'divChild'
-    divChild.append(imgSneakers)
-    divChild.append(imgHeart)
-    divChild.append(pPrice)
-    divChild.append(pName)
-    divChild.append(pType)
+    sneakersChild.style.margin = '10px'
+    sneakersChild.style.position = 'relative'
+    sneakersChild.className = 'sneakersChild'
+    sneakersChild.append(imgSneakers)
+    sneakersChild.append(imgHeart)
+    sneakersChild.append(pPrice)
+    sneakersChild.append(pName)
+    sneakersChild.append(pType)
 
     imgSneakers.className = 'imgSneakers'
     imgSneakers.src = sneaker.image
@@ -82,14 +80,15 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 
     let heart = 0
 
-    divChild.addEventListener('click', function (event){
+    sneakersChild.addEventListener('click', function (event){
         // console.log(heart % 2 == 1) // we can see how it's work in consol
         let svgArrey = ['red-heart.svg', 'icon-heart.svg']
 
         const target = event.target.closest('.imgHeart');
-        if(!target) return;
-        target.src = heart % 2 == 1 ? svgArrey[0] : svgArrey[1]
+        target.src = heart % 2 == 1 ? svgArrey[1] : svgArrey[0]
+
         heart = heart + 1
+
     })
 })
 
