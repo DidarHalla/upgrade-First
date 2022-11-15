@@ -19,19 +19,19 @@ let massAllSneakersInfo =  Object.values(globalKart)
 
 
 let newMass = massAllSneakersInfo.forEach((sneaker) => {
-    const divContainer = document.getElementById('container')
+    const container = document.getElementById('container')
     const sneakersDad = document.getElementById('sneakersDad')
     const sneakersChild = document.createElement('div')
-    const imgSneakers = document.createElement('img')
-    const imgHeart = document.createElement('img')
-    const imgRedHeart = document.createElement('img')
+    const pictureSneakers = document.createElement('img')
+    const pictureHeart = document.createElement('img')
+    const pictureRedHeart = document.createElement('img')
     const pPrice = document.createElement('p')
     const pName = document.createElement('p')
     const pType = document.createElement('p')
 
-    divContainer.style.display = 'flex'
-    divContainer.style.justifyContent = 'center'
-    divContainer.style.marginTop = '70px'
+    container.style.display = 'flex'
+    container.style.justifyContent = 'center'
+    container.style.marginTop = '70px'
 
     sneakersDad.append(sneakersChild)
     sneakersDad.style.display = 'flex'
@@ -44,23 +44,23 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     sneakersChild.style.margin = '10px'
     sneakersChild.style.position = 'relative'
     sneakersChild.className = 'sneakersChild'
-    sneakersChild.append(imgSneakers)
-    sneakersChild.append(imgHeart)
+    sneakersChild.append(pictureSneakers)
+    sneakersChild.append(pictureHeart)
     sneakersChild.append(pPrice)
     sneakersChild.append(pName)
     sneakersChild.append(pType)
 
-    imgSneakers.className = 'imgSneakers'
-    imgSneakers.src = sneaker.image
+    pictureSneakers.className = 'pictureSneakers'
+    pictureSneakers.src = sneaker.image
 
-    imgHeart.src = 'icon-heart.svg'
-    imgHeart.style.position = 'absolute'
-    imgHeart.style.top = '8px'
-    imgHeart.style.right = '10px'
-    imgHeart.className = 'imgHeart'
+    pictureHeart.src = 'icon-heart.svg'
+    pictureHeart.style.position = 'absolute'
+    pictureHeart.style.top = '8px'
+    pictureHeart.style.right = '10px'
+    pictureHeart.className = 'pictureHeart'
 
-    imgRedHeart.src = 'red-heart.svg'
-    imgRedHeart.className = 'imgRedHeart'
+    pictureRedHeart.src = 'red-heart.svg'
+    pictureRedHeart.className = 'pictureRedHeart'
 
     pPrice.append(sneaker.price)
     pPrice.style.fontFamily = 'impact, fantasy'
@@ -84,7 +84,7 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
         // console.log(heart % 2 == 1) // we can see how it's work in consol
         let svgArrey = ['red-heart.svg', 'icon-heart.svg']
 
-        const target = event.target.closest('.imgHeart');
+        const target = event.target.closest('.pictureHeart');
         target.src = heart % 2 == 1 ? svgArrey[1] : svgArrey[0]
 
         heart = heart + 1

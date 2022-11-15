@@ -20,7 +20,7 @@ body{
     margin: 10px;
     border: 1px solid rgb(168, 167, 167);
 }
-.galka{
+.checkMark{
     margin-bottom: -3px;
 }
 .content-wrapper{
@@ -34,7 +34,6 @@ body{
     height: 100vh;
     min-width: 150px;
     top: 70px;
-    margin-right: 0px;
 }
 .item-side-bar{
     background: #fdfdfd;
@@ -55,32 +54,16 @@ body{
         display: flex;
         justify-content: center;
     }
-}
-@media (max-width: 1080px) {
-    .itemHeader{
-        background: #fdfdfd;
-        width: max-content;
-        padding: 4px;
-        border-radius: 4px;
-        margin: 10px;
-        border: 1px solid rgb(168, 167, 167);
-    }
     .side-bar{
         display: none;
     }
     #container{
         width: 100%;
     }
-    .divDad{
-        width: 100%;
-    }
-    .divChild{
-
-    }
-    .imgSneakers{
+    .pictureSneakers{
         width: 430px;
     }
-    .imgHeart{
+    .pictureHeart{
         width: 50px;
         margin: 5px;
     }
