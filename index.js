@@ -63,11 +63,13 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     pictureRedHeart.className = 'pictureRedHeart'
 
     pPrice.append(sneaker.price)
+    pPrice.className = 'pPrice'
     pPrice.style.fontFamily = 'impact, fantasy'
     pPrice.style.marginTop = '0px'
     pPrice.style.marginLeft = '10px'
 
     pName.append(sneaker.name)
+    pName.className = 'pName'
     pName.style.margin = '0px'
     pName.style.fontFamily = 'DejaVu Sans Mono, monospace'
     pName.style.marginLeft = '10px'
@@ -93,3 +95,35 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 })
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let arr = [3434,4343,65544565,7656453,543546,4534,233,53454543,4353646,45343,435464,55]
+
+// function findMax(arr){
+//     let max = arr[0]
+//     for(let num of arr){
+//         if(max < num){
+//             max = num
+//         }
+//     }
+//     return max
+// }
+
+
+// console.log(findMax(arr));
