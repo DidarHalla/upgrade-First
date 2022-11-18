@@ -93,37 +93,3 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let arr = [3434,4343,65544565,7656453,543546,4534,233,53454543,4353646,45343,435464,55]
-
-// function findMax(arr){
-//     let max = arr[0]
-//     for(let num of arr){
-//         if(max < num){
-//             max = num
-//         }
-//     }
-//     return max
-// }
-
-
-// console.log(findMax(arr));
