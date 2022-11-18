@@ -91,5 +91,3 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 
     })
 })
-
-
