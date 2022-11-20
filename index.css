@@ -20,16 +20,18 @@ body{
     border-radius: 4px;
     margin: 10px;
     border: 1px solid rgb(168, 167, 167);
-    /* position: relative; */
 }
-.submenu-popular-sorting{
+.submenu-sort{
     display: none;
-    margin: 0px 0px 0px -50px;
+    width: 152px;
+    margin: 0px 0px 0px -10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     background-color: #f9f9f9;
     padding: 12px;
+    list-style-type: none;
+    position: absolute;
 }
-.wrapper-itemHeader-submenuPopular:hover .submenu-popular-sorting{
+.wrapper-dropdownMenu:hover .submenu-sort{
     display: block;
 }
 .checkMark{
@@ -85,13 +87,7 @@ body{
         width: 50px;
         margin: 5px;
     }
-    .pPrice {
-        font-size: 25pt;
-    }
-    .pName{
-        font-size: 25pt;
-    }
-    .pType{
+    #textUnderShoes{
         font-size: 25pt;
     }
 }

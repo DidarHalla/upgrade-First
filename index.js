@@ -61,20 +61,23 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 
     pictureRedHeart.src = 'red-heart.svg'
     pictureRedHeart.className = 'pictureRedHeart'
-
+    
     pPrice.append(sneaker.price)
+    pPrice.id = 'textUnderShoes'
     pPrice.className = 'pPrice'
     pPrice.style.fontFamily = 'impact, fantasy'
     pPrice.style.marginTop = '0px'
     pPrice.style.marginLeft = '10px'
 
     pName.append(sneaker.name)
+    pName.id = 'textUnderShoes'
     pName.className = 'pName'
     pName.style.margin = '0px'
     pName.style.fontFamily = 'DejaVu Sans Mono, monospace'
     pName.style.marginLeft = '10px'
 
     pType.append(sneaker.type)
+    pType.id = 'textUnderShoes'
     pType.className = 'pType'
     pType.style.margin = '0px'
     pType.style.fontFamily = 'DejaVu Sans Mono, monospace'
