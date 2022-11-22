@@ -7,6 +7,7 @@ body{
     padding: 16px 16px 16px 0px;
     position: fixed;
     top: 0;
+    max-height: 80px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -19,6 +20,19 @@ body{
     border-radius: 4px;
     margin: 10px;
     border: 1px solid rgb(168, 167, 167);
+}
+.submenu-sort{
+    display: none;
+    width: 152px;
+    margin: 0px 0px 0px -10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #f9f9f9;
+    padding: 12px;
+    list-style-type: none;
+    position: absolute;
+}
+.wrapper-dropdownMenu:hover .submenu-sort{
+    display: block;
 }
 .checkMark{
     margin-bottom: -3px;
@@ -44,15 +58,21 @@ body{
     font-weight: 800;
 }
 @media (max-width: 1080px) {
-    #header-filters {
-        background: rgb(255, 255, 255);
-        color: #050505;
-        padding: 16px 16px 16px 0px;
-        position: fixed;
-        top: 0;
-        width: 100%;
+    #header-filters{
+        min-width: 820px;
+        margin-left: -19px;
+    }
+    #sneakersDad{
+        margin-top: 33px;
+    }
+    .itemHeader{
         display: flex;
+        font-size: 30pt;
         justify-content: center;
+    }
+    .checkMark{
+        margin: 0px 0px 0px 7px;
+        width: 40px;
     }
     .side-bar{
         display: none;
@@ -67,4 +87,9 @@ body{
         width: 50px;
         margin: 5px;
     }
+    #textUnderShoes{
+        font-size: 25pt;
+    }
 }
+
+
