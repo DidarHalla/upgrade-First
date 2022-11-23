@@ -24,11 +24,11 @@ body{
 .submenu-sort{
     display: none;
     width: 152px;
-    margin: 0px 0px 0px -10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     background-color: #f9f9f9;
     padding: 12px;
     list-style-type: none;
+    margin-top: 0px;
     position: absolute;
 }
 .wrapper-dropdownMenu:hover .submenu-sort{

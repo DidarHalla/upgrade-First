@@ -17,8 +17,7 @@ price.forEach((v, i) => {
 
 let massAllSneakersInfo =  Object.values(globalKart)
 
-
-let newMass = massAllSneakersInfo.forEach((sneaker) => {
+let coso = massAllSneakersInfo.forEach((sneaker) => {
     const container = document.getElementById('container')
     const sneakersDad = document.getElementById('sneakersDad')
     const sneakersChild = document.createElement('div')
@@ -28,6 +27,7 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     const pPrice = document.createElement('p')
     const pName = document.createElement('p')
     const pType = document.createElement('p')
+   
 
     container.style.display = 'flex'
     container.style.justifyContent = 'center'
@@ -61,7 +61,7 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
 
     pictureRedHeart.src = 'red-heart.svg'
     pictureRedHeart.className = 'pictureRedHeart'
-    
+
     pPrice.append(sneaker.price)
     pPrice.id = 'textUnderShoes'
     pPrice.className = 'pPrice'
@@ -83,16 +83,32 @@ let newMass = massAllSneakersInfo.forEach((sneaker) => {
     pType.style.fontFamily = 'DejaVu Sans Mono, monospace'
     pType.style.marginLeft = '10px'
 
-    let heart = 0
-
-    sneakersChild.addEventListener('click', function (event){
-        // console.log(heart % 2 == 1) // we can see how it's work in consol
-        let svgArrey = ['red-heart.svg', 'icon-heart.svg']
-
-        const target = event.target.closest('.pictureHeart');
-        target.src = heart % 2 == 1 ? svgArrey[1] : svgArrey[0]
-
-        heart = heart + 1
-
-    })
+   
 })
+
+// console.log(coso);
+
+
+
+let subMenu = document.getElementById('submenu')
+
+submenu.style.display = 'none'
+subMenu.style.width = '152px'
+subMenu.style.boxShadow = '0px 8px 16px 0px rgba(0,0,0,0.2)'
+subMenu.style.backgroundColor = '#f9f9f9'
+subMenu.style.padding = '12px'
+subMenu.style.listStyleType = 'none'
+subMenu.style.position = 'absolute'
+
+
+const theSizeWrapper = document.getElementById('theSizeWrapper')
+
+theSizeWrapper.onmouseover = function(){
+    subMenu.style.display = 'block'
+    subMenu.style.marginTop = '0px'
+}
+
+theSizeWrapper.onmouseout = function(){
+    subMenu.style.display = 'none'
+}
+
