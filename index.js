@@ -89,14 +89,13 @@ let coso = massAllSneakersInfo.forEach((sneaker) => {
         let tar = event.target
         if(heart == false){
             tar.src = 'red-heart.svg'
-        }else if(heart == true){
-             tar.src = 'icon-heart.svg'
+            heart = true
+        }else{
+            tar.src = 'icon-heart.svg'
+            heart = false
         }
-      
-
-        console.log(pictureHeart);
-
     })
+
 })
 
 
