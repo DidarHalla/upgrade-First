@@ -83,10 +83,22 @@ let coso = massAllSneakersInfo.forEach((sneaker) => {
     pType.style.fontFamily = 'DejaVu Sans Mono, monospace'
     pType.style.marginLeft = '10px'
 
-   
+    let heart = false
+
+    pictureHeart.addEventListener('click', function (event){
+        let tar = event.target
+        if(heart == false){
+            tar.src = 'red-heart.svg'
+        }else if(heart == true){
+             tar.src = 'icon-heart.svg'
+        }
+      
+
+        console.log(pictureHeart);
+
+    })
 })
 
-// console.log(coso);
 
 
 
@@ -111,4 +123,5 @@ theSizeWrapper.onmouseover = function(){
 theSizeWrapper.onmouseout = function(){
     subMenu.style.display = 'none'
 }
+
 
