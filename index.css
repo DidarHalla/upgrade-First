@@ -62,14 +62,14 @@ body{
     justify-content: center;
     margin-top: 70px;
 }
-.sneakersDad{
+.sneakersContainer{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     min-width: 300px;
     max-width: 900px;
 }
-.sneakersChild{
+.sneakerItem{
     position: relative;
     margin: 10px;
 }
@@ -82,7 +82,7 @@ body{
     margin: 5px 0px 10px 15px;
     font-family: impact;
 }
-.textAtTheBottomShoes{
+.itemDescription{
     margin: 0px 0px 0px 10px;
     font-family: Monospace;
 }
@@ -91,7 +91,7 @@ body{
         min-width: 820px;
         margin-left: -19px;
     }
-    #sneakersDad{
+    #sneakersContainer{
         margin-top: 33px;
     }
     .itemHeader{
@@ -120,7 +120,7 @@ body{
         font-size: 25pt;
         margin: 10px 0px 10px 20px;
     }
-    .textAtTheBottomShoes{
+    .itemDescription{
         font-size: 25pt;
     }
 }

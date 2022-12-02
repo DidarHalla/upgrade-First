@@ -18,9 +18,8 @@ price.forEach((v, i) => {
 let massAllSneakersInfo =  Object.values(globalKart)
 
 let coso = massAllSneakersInfo.forEach((sneaker) => {
-    const container = document.getElementById('container')
-    const sneakersDad = document.getElementById('sneakersDad')
-    const sneakersChild = document.createElement('div')
+    const sneakersContainer = document.getElementById('sneakersContainer')
+    const sneakerItem = document.createElement('div')
     const pictureSneakers = document.createElement('img')
     const pictureHeart = document.createElement('img')
     const pictureRedHeart = document.createElement('img')
@@ -28,14 +27,14 @@ let coso = massAllSneakersInfo.forEach((sneaker) => {
     const sneakersName = document.createElement('p')
     const sneakersType = document.createElement('p')
 
-    sneakersDad.append(sneakersChild)
+    sneakersContainer.append(sneakerItem)
 
-    sneakersChild.className = 'sneakersChild'
-    sneakersChild.append(pictureSneakers)
-    sneakersChild.append(pictureHeart)
-    sneakersChild.append(sneakersPrice)
-    sneakersChild.append(sneakersName)
-    sneakersChild.append(sneakersType)
+    sneakerItem.className = 'sneakerItem'
+    sneakerItem.append(pictureSneakers)
+    sneakerItem.append(pictureHeart)
+    sneakerItem.append(sneakersPrice)
+    sneakerItem.append(sneakersName)
+    sneakerItem.append(sneakersType)
 
     pictureSneakers.className = 'pictureSneakers'
     pictureSneakers.alt = 'picture Sneakers'
@@ -51,17 +50,17 @@ let coso = massAllSneakersInfo.forEach((sneaker) => {
     sneakersPrice.className = 'sneakersPrice'
 
     sneakersName.append(sneaker.name)
-    sneakersName.className = 'textAtTheBottomShoes'
+    sneakersName.className = 'itemDescription'
 
     sneakersType.append(sneaker.type)
-    sneakersType.className = 'textAtTheBottomShoes'
+    sneakersType.className = 'itemDescription'
 
     
     let heart = false
 
     pictureHeart.addEventListener('click', function (event){
         let tar = event.target
-        if(heart == false){
+        if(!heart){
             tar.src = 'red-heart.svg'
             heart = true
         }else{
@@ -104,12 +103,16 @@ const submenuSort = document.getElementById('submenu-sort')
 
 submenuSort.addEventListener('mouseover', (ev) => {
     let tar = ev.target.closest('li')
-
+    tar.className = 'itemDropMenu'
     tar.style.backgroundColor = '#e9e9e9'
     console.log(tar);
 })
 submenuSort.addEventListener('mouseout', (ev) => {
     let tar = ev.target.closest('li')
-
     tar.style.backgroundColor = ''
 })
+submenuSort.addEventListener('click', (ev) => {
+    let tar = ev.target.textContent
+    alert(tar);
+})
+
