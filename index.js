@@ -18,75 +18,59 @@ price.forEach((v, i) => {
 let massAllSneakersInfo =  Object.values(globalKart)
 
 let coso = massAllSneakersInfo.forEach((sneaker) => {
-    const container = document.getElementById('container')
-    const sneakersDad = document.getElementById('sneakersDad')
-    const sneakersChild = document.createElement('div')
+    const sneakersContainer = document.getElementById('sneakersContainer')
+    const sneakerItem = document.createElement('div')
     const pictureSneakers = document.createElement('img')
     const pictureHeart = document.createElement('img')
     const pictureRedHeart = document.createElement('img')
-    const pPrice = document.createElement('p')
-    const pName = document.createElement('p')
-    const pType = document.createElement('p')
-   
+    const sneakersPrice = document.createElement('p')
+    const sneakersName = document.createElement('p')
+    const sneakersType = document.createElement('p')
 
-    container.style.display = 'flex'
-    container.style.justifyContent = 'center'
-    container.style.marginTop = '70px'
+    sneakersContainer.append(sneakerItem)
 
-    sneakersDad.append(sneakersChild)
-    sneakersDad.style.display = 'flex'
-    sneakersDad.style.justifyContent = 'center'
-    sneakersDad.style.maxWidth ='900px'
-    sneakersDad.style.minWidth ='300px'
-    sneakersDad.style.flexWrap = 'wrap'
-    sneakersDad.style.className = 'sneakersDad'
-
-    sneakersChild.style.margin = '10px'
-    sneakersChild.style.position = 'relative'
-    sneakersChild.className = 'sneakersChild'
-    sneakersChild.append(pictureSneakers)
-    sneakersChild.append(pictureHeart)
-    sneakersChild.append(pPrice)
-    sneakersChild.append(pName)
-    sneakersChild.append(pType)
+    sneakerItem.className = 'sneakerItem'
+    sneakerItem.append(pictureSneakers)
+    sneakerItem.append(pictureHeart)
+    sneakerItem.append(sneakersPrice)
+    sneakerItem.append(sneakersName)
+    sneakerItem.append(sneakersType)
 
     pictureSneakers.className = 'pictureSneakers'
+    pictureSneakers.alt = 'picture Sneakers'
     pictureSneakers.src = sneaker.image
 
-    pictureHeart.src = 'icon-heart.svg'
-    pictureHeart.style.position = 'absolute'
-    pictureHeart.style.top = '8px'
-    pictureHeart.style.right = '10px'
     pictureHeart.className = 'pictureHeart'
+    pictureHeart.src = 'icon-heart.svg'
 
     pictureRedHeart.src = 'red-heart.svg'
     pictureRedHeart.className = 'pictureRedHeart'
 
-    pPrice.append(sneaker.price)
-    pPrice.id = 'textUnderShoes'
-    pPrice.className = 'pPrice'
-    pPrice.style.fontFamily = 'impact, fantasy'
-    pPrice.style.marginTop = '0px'
-    pPrice.style.marginLeft = '10px'
+    sneakersPrice.append(sneaker.price)
+    sneakersPrice.className = 'sneakersPrice'
 
-    pName.append(sneaker.name)
-    pName.id = 'textUnderShoes'
-    pName.className = 'pName'
-    pName.style.margin = '0px'
-    pName.style.fontFamily = 'DejaVu Sans Mono, monospace'
-    pName.style.marginLeft = '10px'
+    sneakersName.append(sneaker.name)
+    sneakersName.className = 'itemDescription'
 
-    pType.append(sneaker.type)
-    pType.id = 'textUnderShoes'
-    pType.className = 'pType'
-    pType.style.margin = '0px'
-    pType.style.fontFamily = 'DejaVu Sans Mono, monospace'
-    pType.style.marginLeft = '10px'
+    sneakersType.append(sneaker.type)
+    sneakersType.className = 'itemDescription'
 
-   
+    
+    let heart = false
+
+    pictureHeart.addEventListener('click', function (event){
+        let tar = event.target
+        if(!heart){
+            tar.src = 'red-heart.svg'
+            heart = true
+        }else{
+            tar.src = 'icon-heart.svg'
+            heart = false
+        }
+    })
+
 })
 
-// console.log(coso);
 
 
 
@@ -111,4 +95,24 @@ theSizeWrapper.onmouseover = function(){
 theSizeWrapper.onmouseout = function(){
     subMenu.style.display = 'none'
 }
+
+
+
+
+const submenuSort = document.getElementById('submenu-sort')
+
+submenuSort.addEventListener('mouseover', (ev) => {
+    let tar = ev.target.closest('li')
+    tar.className = 'itemDropMenu'
+    tar.style.backgroundColor = '#e9e9e9'
+    console.log(tar);
+})
+submenuSort.addEventListener('mouseout', (ev) => {
+    let tar = ev.target.closest('li')
+    tar.style.backgroundColor = ''
+})
+submenuSort.addEventListener('click', (ev) => {
+    let tar = ev.target.textContent
+    alert(tar);
+})
 

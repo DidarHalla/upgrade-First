@@ -57,12 +57,41 @@ body{
     margin: 10px;
     font-weight: 800;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.sneakersContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 300px;
+    max-width: 900px;
+}
+.sneakerItem{
+    position: relative;
+    margin: 10px;
+}
+.pictureHeart{
+    position: absolute; 
+    top: 8px; 
+    right: 10px;
+}
+.sneakersPrice{
+    margin: 5px 0px 10px 15px;
+    font-family: impact;
+}
+.itemDescription{
+    margin: 0px 0px 0px 10px;
+    font-family: Monospace;
+}
 @media (max-width: 1080px) {
     #header-filters{
         min-width: 820px;
         margin-left: -19px;
     }
-    #sneakersDad{
+    #sneakersContainer{
         margin-top: 33px;
     }
     .itemHeader{
@@ -87,7 +116,11 @@ body{
         width: 50px;
         margin: 5px;
     }
-    #textUnderShoes{
+    .sneakersPrice{
+        font-size: 25pt;
+        margin: 10px 0px 10px 20px;
+    }
+    .itemDescription{
         font-size: 25pt;
     }
 }
