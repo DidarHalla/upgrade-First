@@ -138,6 +138,7 @@ sneakersInfo.forEach((sneaker) => {
     sneakersContainer.append(sneakerItem)
 
     sneakerItem.className = 'sneakerItem'
+    sneakerItem.id = 'sneakerItem'
     sneakerItem.append(pictureSneakers)
     sneakerItem.append(pictureHeart)
     sneakerItem.append(sneakersPrice)
@@ -190,11 +191,16 @@ submenuSort.addEventListener('mouseout', (ev) => {
     let tar = ev.target.closest('li')
     tar.style.backgroundColor = ''
 })
+
 submenuSort.addEventListener('click', (ev) => {
-    let tar = ev.target.textContent
-    if( tar == 'По возростанию цены'){
+    let tar = ev.target
+    if( tar.id === 'riseInPrice'){
         console.log(sneakersInfo);
-    } else if(tar == 'По убыванию цены'){
+        let get = document.getElementsById('sneakerItem')
+        get.remove()
+    } else if(tar.id === 'downwardPrice'){
         console.log(sneakersInfo);
     }
 })
+
+
