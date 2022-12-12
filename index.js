@@ -139,7 +139,6 @@ sneakersInfo.forEach((sneaker) => {
     sneakersContainer.append(sneakerItem)
 
     sneakerItem.className = 'sneakerItem'
-    sneakerItem.id = 'sneakerItem'
     sneakerItem.append(pictureSneakers)
     sneakerItem.append(pictureHeart)
     sneakerItem.append(sneakersPrice)
@@ -177,6 +176,7 @@ sneakersInfo.forEach((sneaker) => {
             heart = false
         }
     })
+    
 })
 
 
@@ -191,11 +191,142 @@ submenuSort.addEventListener('mouseout', (event) => {
     let tar = event.target.closest('li')
     tar.style.backgroundColor = ''
 })
-submenuSort.addEventListener('click', (ev) => {
-    let tar = ev.target.textContent
-    if( tar == 'По возростанию цены'){
-        console.log(sneakersInfo);
-    } else if(tar == 'По убыванию цены'){
-        console.log(sneakersInfo);
-    }
+
+
+submenuSort.addEventListener('click', (event) => {
+    let tar = event.target
+
+    if( tar.id === 'sortByRisingPrice'){
+        let getSneakersContainer = document.getElementById('sneakersContainer')
+        getSneakersContainer.remove()
+
+        let sneakersContainer = document.createElement('div')
+        sneakersContainer.id = 'sneakersContainer'
+        sneakersContainer.className = 'sneakersContainer'
+
+        let getContainer = document.getElementById('container')
+        getContainer.append(sneakersContainer)
+
+        sneakersInfo.sort(function(a, b){return a.price - b.price})
+
+        sneakersInfo.forEach((sneaker) => {
+            const sneakersContainer = document.getElementById('sneakersContainer')
+            const sneakerItem = document.createElement('div')
+            const pictureSneakers = document.createElement('img')
+            const pictureHeart = document.createElement('img')
+            const pictureRedHeart = document.createElement('img')
+            const sneakersPrice = document.createElement('p')
+            const sneakersName = document.createElement('p')
+            const sneakersType = document.createElement('p')
+        
+            sneakersContainer.append(sneakerItem)
+        
+            sneakerItem.className = 'sneakerItem'
+            sneakerItem.id = 'sneakerItem'
+            sneakerItem.append(pictureSneakers)
+            sneakerItem.append(pictureHeart)
+            sneakerItem.append(sneakersPrice)
+            sneakerItem.append(sneakersName)
+            sneakerItem.append(sneakersType)
+        
+            pictureSneakers.className = 'pictureSneakers'
+            pictureSneakers.alt = 'picture Sneakers'
+            pictureSneakers.src = sneaker.image
+        
+            pictureHeart.className = 'pictureHeart'
+            pictureHeart.src = 'icon-heart.svg'
+        
+            pictureRedHeart.src = 'red-heart.svg'
+            pictureRedHeart.className = 'pictureRedHeart'
+            
+            sneakersPrice.append(sneaker.price + ' $')
+            sneakersPrice.className = 'sneakersPrice'
+        
+            sneakersName.append(sneaker.name)
+            sneakersName.className = 'itemDescription'
+        
+            sneakersType.append(sneaker.type)
+            sneakersType.className = 'itemDescription'
+        
+            
+            let heart = false
+        
+            pictureHeart.addEventListener('click', function (event){
+                let tar = event.target
+                if(!heart){
+                    tar.src = 'red-heart.svg'
+                    heart = true
+                }else{
+                    tar.src = 'icon-heart.svg'
+                    heart = false
+                }
+            })
+        })
+    } else if(tar.id === 'sortByDownwardPrice'){
+        let getSneakersContainer = document.getElementById('sneakersContainer')
+        getSneakersContainer.remove()
+
+        let sneakersContainer = document.createElement('div')
+        sneakersContainer.id = 'sneakersContainer'
+        sneakersContainer.className = 'sneakersContainer'
+
+        let getContainer = document.getElementById('container')
+        getContainer.append(sneakersContainer)
+
+        sneakersInfo.sort(function(a, b){return b.price - a.price})
+
+        sneakersInfo.forEach((sneaker) => {
+            const sneakersContainer = document.getElementById('sneakersContainer')
+            const sneakerItem = document.createElement('div')
+            const pictureSneakers = document.createElement('img')
+            const pictureHeart = document.createElement('img')
+            const pictureRedHeart = document.createElement('img')
+            const sneakersPrice = document.createElement('p')
+            const sneakersName = document.createElement('p')
+            const sneakersType = document.createElement('p')
+        
+            sneakersContainer.append(sneakerItem)
+        
+            sneakerItem.className = 'sneakerItem'
+            sneakerItem.id = 'sneakerItem'
+            sneakerItem.append(pictureSneakers)
+            sneakerItem.append(pictureHeart)
+            sneakerItem.append(sneakersPrice)
+            sneakerItem.append(sneakersName)
+            sneakerItem.append(sneakersType)
+        
+            pictureSneakers.className = 'pictureSneakers'
+            pictureSneakers.alt = 'picture Sneakers'
+            pictureSneakers.src = sneaker.image
+        
+            pictureHeart.className = 'pictureHeart'
+            pictureHeart.src = 'icon-heart.svg'
+        
+            pictureRedHeart.src = 'red-heart.svg'
+            pictureRedHeart.className = 'pictureRedHeart'
+            
+            sneakersPrice.append(sneaker.price + ' $')
+            sneakersPrice.className = 'sneakersPrice'
+        
+            sneakersName.append(sneaker.name)
+            sneakersName.className = 'itemDescription'
+        
+            sneakersType.append(sneaker.type)
+            sneakersType.className = 'itemDescription'
+        
+            
+            let heart = false
+        
+            pictureHeart.addEventListener('click', function (event){
+                let tar = event.target
+                if(!heart){
+                    tar.src = 'red-heart.svg'
+                    heart = true
+                }else{
+                    tar.src = 'icon-heart.svg'
+                    heart = false
+                }
+            })
+        })
+        }
 })
