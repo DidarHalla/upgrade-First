@@ -124,7 +124,7 @@ const sneakersInfo = [
     },
 ]
 
-function sneakerCards() {
+function addSneakerCards() {
     sneakersInfo.forEach((sneaker) => {
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
@@ -179,7 +179,7 @@ function sneakerCards() {
     })
 }
 
-sneakerCards()
+addSneakerCards()
 
 const submenuSort = document.getElementById('submenu-sort')
 
@@ -208,7 +208,10 @@ submenuSort.addEventListener('click', (event) => {
         let getContainer = document.getElementById('container')
         getContainer.append(sneakersContainer)
 
-        sneakerCards(sneakersInfo.sort(function(a, b){return a.price - b.price}))
+        let sortingByCategory = document.getElementById('sortingByCategory')
+        sortingByCategory.textContent = 'По возростанию цены'
+
+        addSneakerCards(sneakersInfo.sort(function(a, b){return a.price - b.price}))
         
     } else if(target.id === 'sortByDownwardPrice'){
         let getSneakersContainer = document.getElementById('sneakersContainer')
@@ -221,7 +224,10 @@ submenuSort.addEventListener('click', (event) => {
         let getContainer = document.getElementById('container')
         getContainer.append(sneakersContainer)
 
-        sneakerCards(sneakersInfo.sort(function(a, b){return b.price - a.price}))
+        let sortingByCategory = document.getElementById('sortingByCategory')
+        sortingByCategory.textContent = 'По убыванию цены'
+
+        addSneakerCards(sneakersInfo.sort(function(a, b){return b.price - a.price}))
 
     }
 })
