@@ -11,4 +11,12 @@ function sort(arr, func){
     }
     return result
 }
-export { sort }
+
+function compareInAscending(a, b) {
+    return a.price < b.price
+}
+
+function compareInDescending(a, b) {
+    return a.price > b.price
+}
+export { sort, compareInAscending, compareInDescending }

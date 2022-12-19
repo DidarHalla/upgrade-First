@@ -1,9 +1,9 @@
 'use strict'
 import { sneakersInfo } from "./cons.js"
-import { sort } from "./utils.js"
+import { sort, compareInAscending, compareInDescending } from "./utils.js"
 
-function addSneakerCards(arri) {
-    arri.forEach((sneaker) => {
+function addSneakerCards(content) {
+    content.forEach((sneaker) => {
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
         const pictureSneakers = document.createElement('img')
@@ -89,7 +89,7 @@ submenuSort.addEventListener('click', (event) => {
         let sortingByCategory = document.getElementById('sortingByCategory')
         sortingByCategory.textContent = 'По возростанию цены'
 
-        addSneakerCards(sort(sneakersInfo, function(a, b){ return a.price > b.price}))
+        addSneakerCards(sort(sneakersInfo, compareInDescending))
         
     } else if(target.id === 'sortByDownwardPrice'){
         let getSneakersContainer = document.getElementById('sneakersContainer')
@@ -105,9 +105,8 @@ submenuSort.addEventListener('click', (event) => {
         let sortingByCategory = document.getElementById('sortingByCategory')
         sortingByCategory.textContent = 'По убыванию цены'
 
-        // addSneakerCards(sneakersInfo.sort(function(a, b){return b.price - a.price}))
         
-        addSneakerCards(sort(sneakersInfo, function(a, b){ return a.price < b.price}))
+        addSneakerCards(sort(sneakersInfo, compareInAscending))
 
     }
 })
