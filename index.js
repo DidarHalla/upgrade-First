@@ -2,8 +2,8 @@
 import { sneakersInfo } from "./cons.js"
 import { sort, compareInAscending, compareInDescending } from "./utils.js"
 
-function addSneakerCards(content) {
-    content.forEach((sneaker) => {
+function addSneakerCards(cardsInfo) {
+    cardsInfo.forEach((sneaker) => {
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
         const pictureSneakers = document.createElement('img')
