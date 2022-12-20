@@ -53,7 +53,6 @@ function addSneakerCards(cardsInfo) {
                 heart = false
             }
         })
-        
     })
 }
 
