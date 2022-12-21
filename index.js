@@ -1,9 +1,14 @@
 'use strict'
 import { sneakersInfo } from "./cons.js"
-import { sort, compareInAscending, compareInDescending } from "./utils.js"
+import { sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
 
 function addSneakerCards(cardsInfo) {
+
+
+
     cardsInfo.forEach((sneaker) => {
+    console.log(sneaker.date);
+
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
         const pictureSneakers = document.createElement('img')
@@ -54,6 +59,7 @@ function addSneakerCards(cardsInfo) {
             }
         })
     })
+
 }
 
 addSneakerCards(sneakersInfo)
@@ -107,9 +113,23 @@ submenuSort.addEventListener('click', (event) => {
         
         addSneakerCards(sort(sneakersInfo, compareInAscending))
 
+    }else if(target.id === 'sortByNewsItem'){
+        let getSneakersContainer = document.getElementById('sneakersContainer')
+        getSneakersContainer.remove()
+
+        let sneakersContainer = document.createElement('div')
+        sneakersContainer.id = 'sneakersContainer'
+        sneakersContainer.className = 'sneakersContainer'
+
+        let getContainer = document.getElementById('container')
+        getContainer.append(sneakersContainer)
+
+        let sortingByCategory = document.getElementById('sortingByCategory')
+        sortingByCategory.textContent = 'По новинкам'
+
+        
+        addSneakerCards(sort(sneakersInfo, sortByNew))
+
     }
 })
-
-
-
 

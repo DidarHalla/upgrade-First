@@ -12,11 +12,20 @@ function sort(arr, func){
     return result
 }
 
-function compareInAscending(a, b) {
-    return a.price < b.price
+function getRandomDate(start = new Date(2018, 0, 1), end = new Date()) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
 }
 
 function compareInDescending(a, b) {
     return a.price > b.price
 }
-export { sort, compareInAscending, compareInDescending }
+
+function compareInAscending(a, b) {
+    return a.price < b.price
+}
+
+function sortByNew(a, b) {
+    return a.date < b.date
+}
+
+export { sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }
