@@ -7,7 +7,6 @@ function addSneakerCards(cardsInfo) {
 
 
     cardsInfo.forEach((sneaker) => {
-    console.log(sneaker.date);
 
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
