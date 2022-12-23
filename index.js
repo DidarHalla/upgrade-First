@@ -1,10 +1,8 @@
 'use strict'
 import { sneakersInfo } from "./cons.js"
-import { sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
+import { removeThenAddContainer, sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
 
 function addSneakerCards(cardsInfo) {
-
-
 
     cardsInfo.forEach((sneaker) => {
 
@@ -79,56 +77,30 @@ submenuSort.addEventListener('mouseout', (event) => {
 submenuSort.addEventListener('click', (event) => {
     let target = event.target
 
-    if( target.id === 'sortByRisingPrice'){
-        let getSneakersContainer = document.getElementById('sneakersContainer')
-        getSneakersContainer.remove()
-
-        let sneakersContainer = document.createElement('div')
-        sneakersContainer.id = 'sneakersContainer'
-        sneakersContainer.className = 'sneakersContainer'
-
-        let getContainer = document.getElementById('container')
-        getContainer.append(sneakersContainer)
-
-        let sortingByCategory = document.getElementById('sortingByCategory')
+    switch (target.id) {
+     case 'sortByRisingPrice':
+        removeThenAddContainer()
         sortingByCategory.textContent = 'По возростанию цены'
 
         addSneakerCards(sort(sneakersInfo, compareInDescending))
-        
-    } else if(target.id === 'sortByDownwardPrice'){
-        let getSneakersContainer = document.getElementById('sneakersContainer')
-        getSneakersContainer.remove()
+       break;
 
-        let sneakersContainer = document.createElement('div')
-        sneakersContainer.id = 'sneakersContainer'
-        sneakersContainer.className = 'sneakersContainer'
-
-        let getContainer = document.getElementById('container')
-        getContainer.append(sneakersContainer)
-
-        let sortingByCategory = document.getElementById('sortingByCategory')
+     case 'sortByDownwardPrice':
+        removeThenAddContainer()
         sortingByCategory.textContent = 'По убыванию цены'
 
-        
         addSneakerCards(sort(sneakersInfo, compareInAscending))
+     break;
 
-    }else if(target.id === 'sortByNewsItem'){
-        let getSneakersContainer = document.getElementById('sneakersContainer')
-        getSneakersContainer.remove()
-
-        let sneakersContainer = document.createElement('div')
-        sneakersContainer.id = 'sneakersContainer'
-        sneakersContainer.className = 'sneakersContainer'
-
-        let getContainer = document.getElementById('container')
-        getContainer.append(sneakersContainer)
-
-        let sortingByCategory = document.getElementById('sortingByCategory')
+     case 'sortByNewsItem':
+        removeThenAddContainer()
         sortingByCategory.textContent = 'По новинкам'
 
-        
         addSneakerCards(sort(sneakersInfo, sortByNew))
+       break;
 
+     default:
+       alert( "Нет таких значений" );
     }
 })
 

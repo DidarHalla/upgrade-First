@@ -1,3 +1,18 @@
+
+function removeThenAddContainer() {
+    let getSneakersContainer = document.getElementById('sneakersContainer')
+    getSneakersContainer.remove()
+
+    let sneakersContainer = document.createElement('div')
+    sneakersContainer.id = 'sneakersContainer'
+    sneakersContainer.className = 'sneakersContainer'
+
+    let getContainer = document.getElementById('container')
+    getContainer.append(sneakersContainer)
+
+    let sortingByCategory = document.getElementById('sortingByCategory')
+}
+
 function sort(arr, func){
     let result = [...arr]
     for(let i = 0; i < result.length; i++){
@@ -28,4 +43,6 @@ function sortByNew(a, b) {
     return a.date < b.date
 }
 
-export { sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }
+
+
+export { removeThenAddContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }
