@@ -10,7 +10,6 @@ function resetContainer() {
     let getContainer = document.getElementById('container')
     getContainer.append(sneakersContainer)
 
-    let sortingByCategory = document.getElementById('sortingByCategory')
 }
 
 function sort(arr, func){
