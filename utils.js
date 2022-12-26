@@ -1,5 +1,5 @@
 
-function removeThenAddContainer() {
+function resetContainer() {
     let getSneakersContainer = document.getElementById('sneakersContainer')
     getSneakersContainer.remove()
 
@@ -27,8 +27,8 @@ function sort(arr, func){
     return result
 }
 
-function getRandomDate(start = new Date(2018, 0, 1), end = new Date()) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+function getRandomDate() {
+    return new Date(Date.now()- Math.random()*100000000000)
 }
 
 function compareInDescending(a, b) {
@@ -45,4 +45,4 @@ function sortByNew(a, b) {
 
 
 
-export { removeThenAddContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }
+export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }

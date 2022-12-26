@@ -1,6 +1,6 @@
 'use strict'
 import { sneakersInfo } from "./cons.js"
-import { removeThenAddContainer, sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
+import { resetContainer, sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
 
 function addSneakerCards(cardsInfo) {
 
@@ -79,21 +79,21 @@ submenuSort.addEventListener('click', (event) => {
 
     switch (target.id) {
      case 'sortByRisingPrice':
-        removeThenAddContainer()
+        resetContainer()
         sortingByCategory.textContent = 'По возростанию цены'
 
         addSneakerCards(sort(sneakersInfo, compareInDescending))
        break;
 
      case 'sortByDownwardPrice':
-        removeThenAddContainer()
+        resetContainer()
         sortingByCategory.textContent = 'По убыванию цены'
 
         addSneakerCards(sort(sneakersInfo, compareInAscending))
      break;
 
      case 'sortByNewsItem':
-        removeThenAddContainer()
+        resetContainer()
         sortingByCategory.textContent = 'По новинкам'
 
         addSneakerCards(sort(sneakersInfo, sortByNew))
