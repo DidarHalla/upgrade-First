@@ -1,3 +1,18 @@
+
+function resetContainer() {
+    let getSneakersContainer = document.getElementById('sneakersContainer')
+    getSneakersContainer.remove()
+
+    let sneakersContainer = document.createElement('div')
+    sneakersContainer.id = 'sneakersContainer'
+    sneakersContainer.className = 'sneakersContainer'
+
+    let getContainer = document.getElementById('container')
+    getContainer.append(sneakersContainer)
+
+    let sortingByCategory = document.getElementById('sortingByCategory')
+}
+
 function sort(arr, func){
     let result = [...arr]
     for(let i = 0; i < result.length; i++){
@@ -12,11 +27,22 @@ function sort(arr, func){
     return result
 }
 
-function compareInAscending(a, b) {
-    return a.price < b.price
+function getRandomDate() {
+    return new Date(Date.now()- Math.random()*100000000000)
 }
 
 function compareInDescending(a, b) {
     return a.price > b.price
 }
-export { sort, compareInAscending, compareInDescending }
+
+function compareInAscending(a, b) {
+    return a.price < b.price
+}
+
+function sortByNew(a, b) {
+    return a.date < b.date
+}
+
+
+
+export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }

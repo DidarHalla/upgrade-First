@@ -1,9 +1,11 @@
 'use strict'
 import { sneakersInfo } from "./cons.js"
-import { sort, compareInAscending, compareInDescending } from "./utils.js"
+import { resetContainer, sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
 
 function addSneakerCards(cardsInfo) {
+
     cardsInfo.forEach((sneaker) => {
+
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
         const pictureSneakers = document.createElement('img')
@@ -54,6 +56,7 @@ function addSneakerCards(cardsInfo) {
             }
         })
     })
+
 }
 
 addSneakerCards(sneakersInfo)
@@ -74,42 +77,30 @@ submenuSort.addEventListener('mouseout', (event) => {
 submenuSort.addEventListener('click', (event) => {
     let target = event.target
 
-    if( target.id === 'sortByRisingPrice'){
-        let getSneakersContainer = document.getElementById('sneakersContainer')
-        getSneakersContainer.remove()
-
-        let sneakersContainer = document.createElement('div')
-        sneakersContainer.id = 'sneakersContainer'
-        sneakersContainer.className = 'sneakersContainer'
-
-        let getContainer = document.getElementById('container')
-        getContainer.append(sneakersContainer)
-
-        let sortingByCategory = document.getElementById('sortingByCategory')
+    switch (target.id) {
+     case 'sortByRisingPrice':
+        resetContainer()
         sortingByCategory.textContent = 'По возростанию цены'
 
         addSneakerCards(sort(sneakersInfo, compareInDescending))
-        
-    } else if(target.id === 'sortByDownwardPrice'){
-        let getSneakersContainer = document.getElementById('sneakersContainer')
-        getSneakersContainer.remove()
+       break;
 
-        let sneakersContainer = document.createElement('div')
-        sneakersContainer.id = 'sneakersContainer'
-        sneakersContainer.className = 'sneakersContainer'
-
-        let getContainer = document.getElementById('container')
-        getContainer.append(sneakersContainer)
-
-        let sortingByCategory = document.getElementById('sortingByCategory')
+     case 'sortByDownwardPrice':
+        resetContainer()
         sortingByCategory.textContent = 'По убыванию цены'
 
-        
         addSneakerCards(sort(sneakersInfo, compareInAscending))
+     break;
 
+     case 'sortByNewsItem':
+        resetContainer()
+        sortingByCategory.textContent = 'По новинкам'
+
+        addSneakerCards(sort(sneakersInfo, sortByNew))
+       break;
+
+     default:
+       alert( "Нет таких значений" );
     }
 })
-
-
-
 
