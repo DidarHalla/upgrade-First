@@ -1,6 +1,6 @@
 'use strict'
 import { sneakersInfo } from "./cons.js"
-import { resetContainer, sort, compareInAscending, compareInDescending, sortByNew } from "./utils.js"
+import { resetContainer, sort, compareInAscending, compareInDescending, sortByNew, popularSneaker } from "./utils.js"
 
 function addSneakerCards(cardsInfo) {
 
@@ -44,12 +44,17 @@ function addSneakerCards(cardsInfo) {
         sneakersType.className = 'itemDescription'
     
         let heart = false
+
+        let result = 0
     
         pictureHeart.addEventListener('click', function (event){
             let target = event.target
             if(!heart){
                 target.src = 'red-heart.svg'
                 heart = true
+
+                console.log(popularSneaker[sneaker.id] = ++result);
+                console.log(popularSneaker);
             }else{
                 target.src = 'icon-heart.svg'
                 heart = false
@@ -78,6 +83,14 @@ submenuSort.addEventListener('click', (event) => {
     let target = event.target
 
     switch (target.id) {
+     case 'sortByPopularity':
+        resetContainer()
+        sortingByCategory.textContent = 'По популярности'
+
+        addSneakerCards(sneakersInfo)
+        alert(popularSneaker[0])
+       break;
+
      case 'sortByRisingPrice':
         resetContainer()
         sortingByCategory.textContent = 'По возростанию цены'

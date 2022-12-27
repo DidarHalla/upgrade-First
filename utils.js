@@ -42,6 +42,7 @@ function sortByNew(a, b) {
     return a.date < b.date
 }
 
+const popularSneaker = {}
 
 
-export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }
+export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew, popularSneaker }

@@ -2,6 +2,7 @@
 
 import { getRandomDate } from "./utils.js"
 
+
 export const sneakersInfo = [
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABM929601_17356797_1_v1.jpg',
@@ -9,7 +10,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 249,
         date: getRandomDate(),
-        id: 'sneaker-1',
+        id: 'sneaker1',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABQ520101_17717054_1_v1.jpg',
@@ -17,7 +18,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 153,
         date: getRandomDate(),
-        id: 'sneaker-2',
+        id: 'sneaker2',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/A/D/AD093AUMOKG9_13279634_1_v1.jpg',
@@ -25,7 +26,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 204,
         date: getRandomDate(),
-        id: 'sneaker-3',
+        id: 'sneaker3',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLACB638801_18413347_1_v1_2x.jpg',
@@ -33,7 +34,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 95,
         date: getRandomDate(),
-        id: 'sneaker-4',
+        id: 'sneaker4',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABX723401_17973506_1_v1.jpg',
@@ -41,7 +42,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 249,
         date: getRandomDate(),
-        id: 'sneaker-5',
+        id: 'sneaker5',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLAAX263202_17963357_1_v1.jpg',
@@ -49,7 +50,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 53,
         date: getRandomDate(),
-        id: 'sneaker-6',
+        id: 'sneaker6',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABP405301_17739711_1_v1_2x.jpg',
@@ -57,7 +58,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 389,
         date: getRandomDate(),
-        id: 'sneaker-7',
+        id: 'sneaker7',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABX877701_17875917_1_v3.jpg',
@@ -65,7 +66,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 249,
         date: getRandomDate(),
-        id: 'sneaker-8',
+        id: 'sneaker8',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABK472901_17039311_1_v2.jpg',
@@ -73,7 +74,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 454,
         date: getRandomDate(),
-        id: 'sneaker-9',
+        id: 'sneaker9',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABY543901_18046135_1_v1.jpg',
@@ -81,7 +82,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 359,
         date: getRandomDate(),
-        id: 'sneaker-10',
+        id: 'sneaker10',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABP912201_17719185_1_v1_2x.jpg',
@@ -89,7 +90,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 294,
         date: getRandomDate(),
-        id: 'sneaker-11',
+        id: 'sneaker11',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLACA047201_18082402_1_v1_2x.jpg',
@@ -97,7 +98,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 193,
         date: getRandomDate(),
-        id: 'sneaker-12',
+        id: 'sneaker12',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABM929601_17356797_1_v1.jpg',
@@ -105,7 +106,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 165,
         date: getRandomDate(),
-        id: 'sneaker-13',
+        id: 'sneaker13',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABQ520101_17717054_1_v1.jpg',
@@ -113,7 +114,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 134,
         date: getRandomDate(),
-        id: 'sneaker-14',
+        id: 'sneaker14',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLAAX263202_17963357_1_v1.jpg',
@@ -121,7 +122,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 174,
         date: getRandomDate(),
-        id: 'sneaker-15',
+        id: 'sneaker15',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABX723401_17973506_1_v1.jpg',
@@ -129,7 +130,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 73,
         date: getRandomDate(),
-        id: 'sneaker-16',
+        id: 'sneaker16',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/A/D/AD093AUMOKG9_13279634_1_v1.jpg',
@@ -137,7 +138,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 233,
         date: getRandomDate(),
-        id: 'sneaker-17',
+        id: 'sneaker17',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABK472901_17039311_1_v2.jpg',
@@ -145,7 +146,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 104,
         date: getRandomDate(),
-        id: 'sneaker-18',
+        id: 'sneaker18',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABP912201_17719185_1_v1_2x.jpg',
@@ -153,7 +154,7 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 254,
         date: getRandomDate(),
-        id: 'sneaker-19',
+        id: 'sneaker19',
     },
     {
         image: 'https://a.lmcdn.ru/img236x341/R/T/RTLABY543901_18046135_1_v1.jpg',
@@ -161,6 +162,6 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 149,
         date: getRandomDate(),
-        id: 'sneaker-20',
+        id: 'sneaker20',
     },
 ]
