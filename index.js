@@ -104,6 +104,7 @@ submenuSort.addEventListener('click', (event) => {
             let includesRating = popularSneakersIds.includes(v.id)
             if(includesRating){
                 favoritSneakers[v.id] = v.rating
+                
             }
             return v
         })
@@ -111,7 +112,7 @@ submenuSort.addEventListener('click', (event) => {
         let domo = Object.entries(favoritSneakers)
         console.log(domo[1][0])
         for(let i = 0; i = domo; i++){
-            
+
         }
         console.log(favoritSneakers);
         break;
