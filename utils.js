@@ -44,5 +44,8 @@ function sortByNew(a, b) {
 
 const popularSneaker = {}
 
+const favoritSneakers = {}
 
-export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew, popularSneaker }
+
+
+export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew, popularSneaker, favoritSneakers }

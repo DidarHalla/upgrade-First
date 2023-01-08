@@ -1,11 +1,12 @@
 'use strict'
+
 import { sneakersInfo } from "./cons.js"
-import { resetContainer, sort, compareInAscending, compareInDescending, sortByNew, popularSneaker } from "./utils.js"
+import { resetContainer, sort, compareInAscending, compareInDescending, sortByNew, popularSneaker, favoritSneakers } from "./utils.js"
+
 
 function addSneakerCards(cardsInfo) {
 
     cardsInfo.forEach((sneaker) => {
-
         const sneakersContainer = document.getElementById('sneakersContainer')
         const sneakerItem = document.createElement('div')
         const pictureSneakers = document.createElement('img')
@@ -46,22 +47,32 @@ function addSneakerCards(cardsInfo) {
         let heart = false
 
         let result = 0
-    
+
         pictureHeart.addEventListener('click', function (event){
             let target = event.target
             if(!heart){
                 target.src = 'red-heart.svg'
                 heart = true
 
-                console.log(popularSneaker[sneaker.id] = ++result);
-                console.log(popularSneaker);
+                popularSneaker[sneaker.id] = ++result
+
+                const popularSneakersIds = Object.keys(popularSneaker);
+
+                const mapedSneakersInfo = sneakersInfo.map((v) => {
+                    let includesId = popularSneakersIds.includes(v.id)
+                    if(includesId){
+                        v['rating'] = popularSneaker[v.id]
+                        console.log('1123', v.id, popularSneaker[v.id]);
+                    }
+                    return v
+                })
+                console.log(mapedSneakersInfo);
             }else{
                 target.src = 'icon-heart.svg'
                 heart = false
             }
         })
     })
-
 }
 
 addSneakerCards(sneakersInfo)
@@ -78,42 +89,58 @@ submenuSort.addEventListener('mouseout', (event) => {
     target.style.backgroundColor = ''
 })
 
-
 submenuSort.addEventListener('click', (event) => {
     let target = event.target
 
     switch (target.id) {
      case 'sortByPopularity':
-        resetContainer()
         sortingByCategory.textContent = 'По популярности'
-
+        resetContainer()
         addSneakerCards(sneakersInfo)
-        alert(popularSneaker[0])
-       break;
+        
+        const popularSneakersIds = Object.keys(popularSneaker)
+
+        const mapedSneakersInfo = sneakersInfo.map((v) => {
+            let includesRating = popularSneakersIds.includes(v.id)
+            if(includesRating){
+                favoritSneakers[v.id] = v.rating
+            }
+            return v
+        })
+        alert('hi')
+        let domo = Object.entries(favoritSneakers)
+        console.log(domo[1][0])
+        for(let i = 0; i = domo; i++){
+            
+        }
+        console.log(favoritSneakers);
+        break;
 
      case 'sortByRisingPrice':
         resetContainer()
         sortingByCategory.textContent = 'По возростанию цены'
 
         addSneakerCards(sort(sneakersInfo, compareInDescending))
-       break;
+
+        break;
 
      case 'sortByDownwardPrice':
         resetContainer()
         sortingByCategory.textContent = 'По убыванию цены'
 
         addSneakerCards(sort(sneakersInfo, compareInAscending))
-     break;
+        break;
 
      case 'sortByNewsItem':
         resetContainer()
         sortingByCategory.textContent = 'По новинкам'
 
         addSneakerCards(sort(sneakersInfo, sortByNew))
-       break;
+        break;
 
      default:
        alert( "Нет таких значений" );
     }
 })
+
 
