@@ -58,15 +58,13 @@ function addSneakerCards(cardsInfo) {
 
                 const popularSneakersIds = Object.keys(popularSneaker);
 
-                const mapedSneakersInfo = sneakersInfo.map((v) => {
+                sneakersInfo.map((v) => {
                     let includesId = popularSneakersIds.includes(v.id)
                     if(includesId){
                         v['rating'] = popularSneaker[v.id]
-                        console.log('1123', v.id, popularSneaker[v.id]);
                     }
                     return v
                 })
-                console.log(mapedSneakersInfo);
             }else{
                 target.src = 'icon-heart.svg'
                 heart = false
@@ -99,22 +97,33 @@ submenuSort.addEventListener('click', (event) => {
         addSneakerCards(sneakersInfo)
         
         const popularSneakersIds = Object.keys(popularSneaker)
-
-        const mapedSneakersInfo = sneakersInfo.map((v) => {
+        sneakersInfo.map((v) => {
             let includesRating = popularSneakersIds.includes(v.id)
             if(includesRating){
                 favoritSneakers[v.id] = v.rating
-                
             }
             return v
         })
-        alert('hi')
-        let domo = Object.entries(favoritSneakers)
-        console.log(domo[1][0])
-        for(let i = 0; i = domo; i++){
+        let favoritSneakersEntrieses = Object.entries(favoritSneakers)
+        let mapedfavoritSneakersEntrieses = favoritSneakersEntrieses.map((v) => {
+            return {[v[0]]:v[1]}
+        })
 
+        
+        let max = 0
+        let result
+        for(let iterator of mapedfavoritSneakersEntrieses){
+            let v = Object.entries(iterator)
+
+            if (v [0][1] > max){
+                max = v[0][1]
+
+                result = iterator
+            }
         }
-        console.log(favoritSneakers);
+        let resultValue = Object.values(result)
+        let resultKeys = Object.keys(result)
+        alert(resultKeys+ ' ' +resultValue)
         break;
 
      case 'sortByRisingPrice':
