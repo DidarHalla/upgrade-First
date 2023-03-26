@@ -1,6 +1,6 @@
 'use strict'
 
-import { getRandomDate } from "./utils.js"
+import { getRandomDate, randomSize } from "./utils.js"
 
 
 export const sneakersInfo = [
@@ -10,6 +10,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 249,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker1',
     },
     {
@@ -18,6 +20,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 153,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker2',
     },
     {
@@ -26,6 +30,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 204,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker3',
     },
     {
@@ -34,6 +40,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 95,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker4',
     },
     {
@@ -42,6 +50,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 249,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker5',
     },
     {
@@ -50,6 +60,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 53,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker6',
     },
     {
@@ -58,6 +70,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 389,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker7',
     },
     {
@@ -66,6 +80,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 249,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker8',
     },
     {
@@ -74,6 +90,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 454,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker9',
     },
     {
@@ -82,6 +100,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 359,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker10',
     },
     {
@@ -90,6 +110,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 294,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker11',
     },
     {
@@ -98,6 +120,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 193,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker12',
     },
     {
@@ -106,6 +130,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 165,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker13',
     },
     {
@@ -114,6 +140,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 134,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker14',
     },
     {
@@ -122,6 +150,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 174,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker15',
     },
     {
@@ -130,6 +160,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 73,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker16',
     },
     {
@@ -138,6 +170,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 233,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker17',
     },
     {
@@ -146,6 +180,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 104,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker18',
     },
     {
@@ -154,6 +190,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 254,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker19',
     },
     {
@@ -162,6 +200,8 @@ export const sneakersInfo = [
         name: 'adidas',
         price: 149,
         date: getRandomDate(),
+        size: randomSize(),
+
         id: 'sneaker20',
     },
 ]

@@ -72,21 +72,19 @@ function addSneakerCards(cardsInfo) {
         })
     })
 }
-
 addSneakerCards(sneakersInfo)
 
+function changeColorOverOut(val){
+    //this function only accepts an object, it needs to be modified to accept an array as well.
+    //this function changes the color of an element when hovering over it, and when moving the mouse away from the element returns the color as it was before.
+    Object.values(val).map(v => {return v.addEventListener('mouseover', (v) => {v.target.style.backgroundColor = '#e9e9e9'})})
+    Object.values(val).map(v => {return v.addEventListener('mouseout', (v) => {v.target.style.backgroundColor = ''})})
+}
+
+let getOverColor = document.querySelectorAll('.overColor')
+changeColorOverOut(getOverColor)
+
 const submenuSort = document.getElementById('submenu-sort')
-
-submenuSort.addEventListener('mouseover', (event) => {
-    let target = event.target.closest('li')
-    target.className = 'itemDropMenu'
-    target.style.backgroundColor = '#e9e9e9'
-})
-submenuSort.addEventListener('mouseout', (event) => {
-    let target = event.target.closest('li')
-    target.style.backgroundColor = ''
-})
-
 submenuSort.addEventListener('click', (event) => {
     let target = event.target
 
@@ -110,19 +108,22 @@ submenuSort.addEventListener('click', (event) => {
         })
 
         
+        function getResult(){
         let max = 0
         let result
         for(let iterator of mapedfavoritSneakersEntrieses){
             let v = Object.entries(iterator)
-
+            console.log(v);
             if (v [0][1] > max){
                 max = v[0][1]
 
                 result = iterator
             }
         }
-        let resultValue = Object.values(result)
-        let resultKeys = Object.keys(result)
+        return result
+        }
+        let resultValue = Object.values(getResult())
+        let resultKeys = Object.keys(getResult())
         alert(resultKeys+ ' ' +resultValue)
         break;
 
@@ -152,5 +153,29 @@ submenuSort.addEventListener('click', (event) => {
        alert( "Нет таких значений" );
     }
 })
+
+let getSubmenu = document.querySelector('#submenu')
+
+getSubmenu.addEventListener('click', function(ev) {
+    resetContainer()
+    addSneakerCards(sneakersInfo.filter((v) => (v.size == ev.target.textContent)))
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
