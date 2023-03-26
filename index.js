@@ -107,7 +107,6 @@ submenuSort.addEventListener('click', (event) => {
             return {[v[0]]:v[1]}
         })
 
-        
         function getResult(){
         let max = 0
         let result
