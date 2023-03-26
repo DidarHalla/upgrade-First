@@ -161,21 +161,3 @@ getSubmenu.addEventListener('click', function(ev) {
     addSneakerCards(sneakersInfo.filter((v) => (v.size == ev.target.textContent)))
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
