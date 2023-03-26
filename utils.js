@@ -42,6 +42,12 @@ function sortByNew(a, b) {
     return a.date < b.date
 }
 
+const popularSneaker = {}
 
+const favoritSneakers = {}
 
-export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew }
+function randomSize(){
+    return Math.floor(Math.random() * (46 - 34 + 1)) + 34
+}
+
+export { resetContainer, sort, getRandomDate, compareInAscending, compareInDescending, sortByNew, popularSneaker, favoritSneakers, randomSize }
